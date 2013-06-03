@@ -23,6 +23,10 @@
 		818F8F53175CAFF100503757 /* Safe_NeighbourhoodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F52175CAFF100503757 /* Safe_NeighbourhoodsTests.m */; };
 		818F8F5E175CB01E00503757 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F5D175CB01E00503757 /* HomeViewController.m */; };
 		818F8F60175CB15600503757 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F8F5F175CB15600503757 /* MapKit.framework */; };
+		818F8F6D175CB48500503757 /* Neighbourhood.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F6C175CB48500503757 /* Neighbourhood.m */; };
+		818F8F70175CB5A400503757 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F6F175CB5A400503757 /* City.m */; };
+		818F8F73175CB5F600503757 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F72175CB5F600503757 /* State.m */; };
+		818F8F7E175CB6C500503757 /* SharedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F7D175CB6C500503757 /* SharedData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,14 @@
 		818F8F5C175CB01E00503757 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		818F8F5D175CB01E00503757 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		818F8F5F175CB15600503757 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		818F8F6B175CB48500503757 /* Neighbourhood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Neighbourhood.h; path = Model/Neighbourhood.h; sourceTree = "<group>"; };
+		818F8F6C175CB48500503757 /* Neighbourhood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Neighbourhood.m; path = Model/Neighbourhood.m; sourceTree = "<group>"; };
+		818F8F6E175CB5A400503757 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Model/City.h; sourceTree = "<group>"; };
+		818F8F6F175CB5A400503757 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Model/City.m; sourceTree = "<group>"; };
+		818F8F71175CB5F600503757 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = State.h; path = Model/State.h; sourceTree = "<group>"; };
+		818F8F72175CB5F600503757 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = State.m; path = Model/State.m; sourceTree = "<group>"; };
+		818F8F7C175CB6C500503757 /* SharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedData.h; path = Model/SharedData.h; sourceTree = "<group>"; };
+		818F8F7D175CB6C500503757 /* SharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SharedData.m; path = Model/SharedData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,7 @@
 		818F8F27175CAFF100503757 /* Safe Neighbourhoods */ = {
 			isa = PBXGroup;
 			children = (
+				818F8F69175CB42900503757 /* Model */,
 				818F8F30175CAFF100503757 /* AppDelegate.h */,
 				818F8F31175CAFF100503757 /* AppDelegate.m */,
 				818F8F28175CAFF100503757 /* Supporting Files */,
@@ -159,6 +172,21 @@
 				818F8F4E175CAFF100503757 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		818F8F69175CB42900503757 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				818F8F6B175CB48500503757 /* Neighbourhood.h */,
+				818F8F6C175CB48500503757 /* Neighbourhood.m */,
+				818F8F6E175CB5A400503757 /* City.h */,
+				818F8F6F175CB5A400503757 /* City.m */,
+				818F8F71175CB5F600503757 /* State.h */,
+				818F8F72175CB5F600503757 /* State.m */,
+				818F8F7C175CB6C500503757 /* SharedData.h */,
+				818F8F7D175CB6C500503757 /* SharedData.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +301,10 @@
 				818F8F2E175CAFF100503757 /* main.m in Sources */,
 				818F8F32175CAFF100503757 /* AppDelegate.m in Sources */,
 				818F8F5E175CB01E00503757 /* HomeViewController.m in Sources */,
+				818F8F6D175CB48500503757 /* Neighbourhood.m in Sources */,
+				818F8F70175CB5A400503757 /* City.m in Sources */,
+				818F8F73175CB5F600503757 /* State.m in Sources */,
+				818F8F7E175CB6C500503757 /* SharedData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +470,7 @@
 				818F8F58175CAFF100503757 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		818F8F59175CAFF100503757 /* Build configuration list for PBXNativeTarget "Safe NeighbourhoodsTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +479,7 @@
 				818F8F5B175CAFF100503757 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
