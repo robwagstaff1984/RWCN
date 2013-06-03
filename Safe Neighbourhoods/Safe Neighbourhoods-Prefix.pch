@@ -11,4 +11,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#define SCREEN_HEIGHT ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_WIDTH ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
+
 #endif

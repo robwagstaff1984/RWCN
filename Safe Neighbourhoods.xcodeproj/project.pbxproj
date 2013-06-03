@@ -16,13 +16,13 @@
 		818F8F34175CAFF100503757 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 818F8F33175CAFF100503757 /* Default.png */; };
 		818F8F36175CAFF100503757 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 818F8F35175CAFF100503757 /* Default@2x.png */; };
 		818F8F38175CAFF100503757 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 818F8F37175CAFF100503757 /* Default-568h@2x.png */; };
-		818F8F3B175CAFF100503757 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F3A175CAFF100503757 /* ViewController.m */; };
-		818F8F3E175CAFF100503757 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818F8F3C175CAFF100503757 /* ViewController.xib */; };
 		818F8F46175CAFF100503757 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F8F45175CAFF100503757 /* SenTestingKit.framework */; };
 		818F8F47175CAFF100503757 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F8F21175CAFF100503757 /* UIKit.framework */; };
 		818F8F48175CAFF100503757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F8F23175CAFF100503757 /* Foundation.framework */; };
 		818F8F50175CAFF100503757 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 818F8F4E175CAFF100503757 /* InfoPlist.strings */; };
 		818F8F53175CAFF100503757 /* Safe_NeighbourhoodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F52175CAFF100503757 /* Safe_NeighbourhoodsTests.m */; };
+		818F8F5E175CB01E00503757 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F5D175CB01E00503757 /* HomeViewController.m */; };
+		818F8F60175CB15600503757 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F8F5F175CB15600503757 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,15 +49,15 @@
 		818F8F33175CAFF100503757 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		818F8F35175CAFF100503757 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		818F8F37175CAFF100503757 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		818F8F39175CAFF100503757 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		818F8F3A175CAFF100503757 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		818F8F3D175CAFF100503757 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		818F8F44175CAFF100503757 /* Safe NeighbourhoodsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safe NeighbourhoodsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		818F8F45175CAFF100503757 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		818F8F4D175CAFF100503757 /* Safe NeighbourhoodsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Safe NeighbourhoodsTests-Info.plist"; sourceTree = "<group>"; };
 		818F8F4F175CAFF100503757 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		818F8F51175CAFF100503757 /* Safe_NeighbourhoodsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Safe_NeighbourhoodsTests.h; sourceTree = "<group>"; };
 		818F8F52175CAFF100503757 /* Safe_NeighbourhoodsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Safe_NeighbourhoodsTests.m; sourceTree = "<group>"; };
+		818F8F5C175CB01E00503757 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		818F8F5D175CB01E00503757 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		818F8F5F175CB15600503757 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818F8F60175CB15600503757 /* MapKit.framework in Frameworks */,
 				818F8F22175CAFF100503757 /* UIKit.framework in Frameworks */,
 				818F8F24175CAFF100503757 /* Foundation.framework in Frameworks */,
 				818F8F26175CAFF100503757 /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +107,7 @@
 		818F8F20175CAFF100503757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				818F8F5F175CB15600503757 /* MapKit.framework */,
 				818F8F21175CAFF100503757 /* UIKit.framework */,
 				818F8F23175CAFF100503757 /* Foundation.framework */,
 				818F8F25175CAFF100503757 /* CoreGraphics.framework */,
@@ -119,10 +121,9 @@
 			children = (
 				818F8F30175CAFF100503757 /* AppDelegate.h */,
 				818F8F31175CAFF100503757 /* AppDelegate.m */,
-				818F8F39175CAFF100503757 /* ViewController.h */,
-				818F8F3A175CAFF100503757 /* ViewController.m */,
-				818F8F3C175CAFF100503757 /* ViewController.xib */,
 				818F8F28175CAFF100503757 /* Supporting Files */,
+				818F8F5C175CB01E00503757 /* HomeViewController.h */,
+				818F8F5D175CB01E00503757 /* HomeViewController.m */,
 			);
 			path = "Safe Neighbourhoods";
 			sourceTree = "<group>";
@@ -235,7 +236,6 @@
 				818F8F34175CAFF100503757 /* Default.png in Resources */,
 				818F8F36175CAFF100503757 /* Default@2x.png in Resources */,
 				818F8F38175CAFF100503757 /* Default-568h@2x.png in Resources */,
-				818F8F3E175CAFF100503757 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 			files = (
 				818F8F2E175CAFF100503757 /* main.m in Sources */,
 				818F8F32175CAFF100503757 /* AppDelegate.m in Sources */,
-				818F8F3B175CAFF100503757 /* ViewController.m in Sources */,
+				818F8F5E175CB01E00503757 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +301,6 @@
 				818F8F2B175CAFF100503757 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		818F8F3C175CAFF100503757 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				818F8F3D175CAFF100503757 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 		818F8F4E175CAFF100503757 /* InfoPlist.strings */ = {
