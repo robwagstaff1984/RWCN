@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "HomeViewController.h"
+#import "NeighbourhoodData.h"
 
 @implementation AppDelegate
 
@@ -16,8 +17,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    self.window.rootViewController = [[HomeViewController alloc] init];
+    [NeighbourhoodData sharedData];
+    HomeViewController *homeViewController = [[HomeViewController alloc] init];;
+    self.window.rootViewController = homeViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -46,7 +48,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    
+    NSLog(@"term");
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void) applicationDidReceiveMemoryWarning:(UIApplication *)application {
+        NSLog(@"memory warning");
 }
 
 @end

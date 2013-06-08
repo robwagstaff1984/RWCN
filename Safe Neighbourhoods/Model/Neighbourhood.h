@@ -10,7 +10,8 @@
 
 @interface Neighbourhood : NSObject
 
-@property (nonatomic) int crimeIndex;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic) float crimeIndex;
 @property (nonatomic) int population;
 
 @end

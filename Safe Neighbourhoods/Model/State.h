@@ -10,6 +10,7 @@
 
 @interface State : NSObject
 
-@property (nonatomic, strong) NSMutableArray* cities;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) NSArray* cities;
 
 @end

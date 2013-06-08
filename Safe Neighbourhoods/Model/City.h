@@ -10,6 +10,7 @@
 
 @interface City : NSObject
 
-@property (nonatomic, strong) NSMutableArray* neighbourhoods;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) NSArray* neighbourhoods;
 
 @end

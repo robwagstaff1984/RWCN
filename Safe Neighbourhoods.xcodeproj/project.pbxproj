@@ -26,7 +26,11 @@
 		818F8F6D175CB48500503757 /* Neighbourhood.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F6C175CB48500503757 /* Neighbourhood.m */; };
 		818F8F70175CB5A400503757 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F6F175CB5A400503757 /* City.m */; };
 		818F8F73175CB5F600503757 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F72175CB5F600503757 /* State.m */; };
-		818F8F7E175CB6C500503757 /* SharedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F7D175CB6C500503757 /* SharedData.m */; };
+		818F8F7E175CB6C500503757 /* NeighbourhoodData.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F7D175CB6C500503757 /* NeighbourhoodData.m */; };
+		81F6F3B617630D1B00FFB9F0 /* USA-no-crime.kml in Resources */ = {isa = PBXBuildFile; fileRef = 81F6F3B517630D1B00FFB9F0 /* USA-no-crime.kml */; };
+		81F6F3B717630F6B00FFB9F0 /* KMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F6F3B317630D0600FFB9F0 /* KMLParser.m */; };
+		81F6F3B91763100800FFB9F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F6F3B81763100800FFB9F0 /* CoreLocation.framework */; };
+		81F6F3BB176313CA00FFB9F0 /* rob4.kml in Resources */ = {isa = PBXBuildFile; fileRef = 81F6F3BA176313C900FFB9F0 /* rob4.kml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +72,13 @@
 		818F8F6F175CB5A400503757 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Model/City.m; sourceTree = "<group>"; };
 		818F8F71175CB5F600503757 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = State.h; path = Model/State.h; sourceTree = "<group>"; };
 		818F8F72175CB5F600503757 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = State.m; path = Model/State.m; sourceTree = "<group>"; };
-		818F8F7C175CB6C500503757 /* SharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedData.h; path = Model/SharedData.h; sourceTree = "<group>"; };
-		818F8F7D175CB6C500503757 /* SharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SharedData.m; path = Model/SharedData.m; sourceTree = "<group>"; };
+		818F8F7C175CB6C500503757 /* NeighbourhoodData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighbourhoodData.h; path = Model/NeighbourhoodData.h; sourceTree = "<group>"; };
+		818F8F7D175CB6C500503757 /* NeighbourhoodData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NeighbourhoodData.m; path = Model/NeighbourhoodData.m; sourceTree = "<group>"; };
+		81F6F3B217630D0600FFB9F0 /* KMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLParser.h; sourceTree = "<group>"; };
+		81F6F3B317630D0600FFB9F0 /* KMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLParser.m; sourceTree = "<group>"; };
+		81F6F3B517630D1B00FFB9F0 /* USA-no-crime.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "USA-no-crime.kml"; sourceTree = "<group>"; };
+		81F6F3B81763100800FFB9F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		81F6F3BA176313C900FFB9F0 /* rob4.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = rob4.kml; path = ../../../playground/KMLViewer/rob4.kml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F6F3B91763100800FFB9F0 /* CoreLocation.framework in Frameworks */,
 				818F8F60175CB15600503757 /* MapKit.framework in Frameworks */,
 				818F8F22175CAFF100503757 /* UIKit.framework in Frameworks */,
 				818F8F24175CAFF100503757 /* Foundation.framework in Frameworks */,
@@ -119,6 +129,7 @@
 		818F8F20175CAFF100503757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81F6F3B81763100800FFB9F0 /* CoreLocation.framework */,
 				818F8F5F175CB15600503757 /* MapKit.framework */,
 				818F8F21175CAFF100503757 /* UIKit.framework */,
 				818F8F23175CAFF100503757 /* Foundation.framework */,
@@ -137,6 +148,10 @@
 				818F8F28175CAFF100503757 /* Supporting Files */,
 				818F8F5C175CB01E00503757 /* HomeViewController.h */,
 				818F8F5D175CB01E00503757 /* HomeViewController.m */,
+				81F6F3B217630D0600FFB9F0 /* KMLParser.h */,
+				81F6F3B317630D0600FFB9F0 /* KMLParser.m */,
+				81F6F3BA176313C900FFB9F0 /* rob4.kml */,
+				81F6F3B517630D1B00FFB9F0 /* USA-no-crime.kml */,
 			);
 			path = "Safe Neighbourhoods";
 			sourceTree = "<group>";
@@ -183,8 +198,8 @@
 				818F8F6F175CB5A400503757 /* City.m */,
 				818F8F71175CB5F600503757 /* State.h */,
 				818F8F72175CB5F600503757 /* State.m */,
-				818F8F7C175CB6C500503757 /* SharedData.h */,
-				818F8F7D175CB6C500503757 /* SharedData.m */,
+				818F8F7C175CB6C500503757 /* NeighbourhoodData.h */,
+				818F8F7D175CB6C500503757 /* NeighbourhoodData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -264,6 +279,8 @@
 				818F8F34175CAFF100503757 /* Default.png in Resources */,
 				818F8F36175CAFF100503757 /* Default@2x.png in Resources */,
 				818F8F38175CAFF100503757 /* Default-568h@2x.png in Resources */,
+				81F6F3B617630D1B00FFB9F0 /* USA-no-crime.kml in Resources */,
+				81F6F3BB176313CA00FFB9F0 /* rob4.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +321,8 @@
 				818F8F6D175CB48500503757 /* Neighbourhood.m in Sources */,
 				818F8F70175CB5A400503757 /* City.m in Sources */,
 				818F8F73175CB5F600503757 /* State.m in Sources */,
-				818F8F7E175CB6C500503757 /* SharedData.m in Sources */,
+				818F8F7E175CB6C500503757 /* NeighbourhoodData.m in Sources */,
+				81F6F3B717630F6B00FFB9F0 /* KMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +416,7 @@
 		818F8F57175CAFF100503757 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Safe Neighbourhoods/Safe Neighbourhoods-Prefix.pch";
 				INFOPLIST_FILE = "Safe Neighbourhoods/Safe Neighbourhoods-Info.plist";
@@ -409,6 +428,7 @@
 		818F8F58175CAFF100503757 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Safe Neighbourhoods/Safe Neighbourhoods-Prefix.pch";
 				INFOPLIST_FILE = "Safe Neighbourhoods/Safe Neighbourhoods-Info.plist";

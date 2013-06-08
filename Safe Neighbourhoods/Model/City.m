@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.neighbourhoods = [[NSMutableArray alloc] init];
+        self.neighbourhoods = [[NSArray alloc] init];
     }
     return self;
 }
