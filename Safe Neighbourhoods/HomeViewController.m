@@ -10,6 +10,8 @@
 #import "NeighbourhoodData.h"
 #import <MapKit/MapKit.h>
 #import "KMLParser.h"
+#import "MKMapView+ZoomLevel.h"
+#define MERCATOR_RADIUS 85445659.44705395
 
 #define kTopAreaHeight 44
 #define kBottomAreaHeight 44
@@ -19,7 +21,13 @@
 
 @property(nonatomic, strong) MKMapView* mapView;
 @property(nonatomic, strong) NSDate *lastLogTime;
-@property(nonatomic, strong) KMLParser *kmlParser;
+@property(nonatomic, strong) KMLParser *cityKmlParser;
+@property(nonatomic, strong) KMLParser *neighbourhoodKMLParser;
+@property(nonatomic, strong) NSArray* cityOverlays;
+@property(nonatomic, strong) NSMutableArray* cityOverlayViews;
+@property(nonatomic, strong) NSArray* californiaOverlays;
+@property(nonatomic) MKMapRect caBounds;
+@property (nonatomic) BOOL isNeighbourhoodDetail;
 @property (nonatomic) int x;
 @end
 
@@ -49,16 +57,21 @@
      NSString *path = [[NSBundle mainBundle] pathForResource:@"CA-Disolved-002" ofType:@"kml"];
     NSURL *url = [NSURL fileURLWithPath:path];
     [self logTimeSinceLastLog:@"Start Parsing"];
-    self.kmlParser = [[KMLParser alloc] initWithURL:url];
+    self.cityKmlParser = [[KMLParser alloc] initWithURL:url];
     
-    [self.kmlParser parseKML];
+    [self.cityKmlParser parseKML];
     [self logTimeSinceLastLog:@"End Parsing"];
     
-    NSArray *overlays = [self.kmlParser overlays];
-    NSLog(@"%d", [overlays count]);
+    self.cityOverlays = [self.cityKmlParser overlays];
+    NSLog(@"%d", [self.cityOverlays count]);
     [self logTimeSinceLastLog:@"made overlays"];
     
-    [self.mapView addOverlays:overlays];
+    self.cityOverlayViews = [NSMutableArray new];
+    for (id<MKOverlay> overlay in self.cityOverlays) {
+        [self.cityOverlayViews addObject:[self.cityKmlParser viewForOverlay:overlay]];
+    }
+    
+    [self.mapView addOverlays:self.cityOverlays];
     
    // [self.kmlParser addMyOverlaysToMap:self.mapView];
     [self logTimeSinceLastLog:@"added overlays"];
@@ -86,12 +99,69 @@
 {
     //NSLog(@"%d", self.x);
   //  self.x++;
-    return [self.kmlParser viewForOverlay:overlay];
+    if(self.isNeighbourhoodDetail) {
+        return [self.neighbourhoodKMLParser viewForOverlay:overlay];
+    } else {
+        //NSArray *results = [self.cityOverlays filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF == %@", overlay]];
+        return [self.cityKmlParser viewForOverlay:overlay];
+        //return [results lastObject];
+    }
+    
+   
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    return [self.kmlParser viewForAnnotation:annotation];
+    return [self.cityKmlParser viewForAnnotation:annotation];
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    double zoomLevel = [self getZoomLevel];
+    //[lblCurrentLevel setText:[NSString stringWithFormat:@"%.2f",zoomLevel]];
+    
+    NSLog(@"zoomlevel-->%f long-->%f lat-->%f",zoomLevel,mapView.region.span.longitudeDelta,mapView.region.span.latitudeDelta);
+    if(zoomLevel >= 9.0 && !self.isNeighbourhoodDetail) {
+        self.isNeighbourhoodDetail = YES;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"CASimple" ofType:@"kml"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        [self logTimeSinceLastLog:@"Start Parsing"];
+        self.neighbourhoodKMLParser = [[KMLParser alloc] initWithURL:url];
+        
+        [self.neighbourhoodKMLParser parseKML];
+        [self logTimeSinceLastLog:@"End Parsing"];
+        
+        self.californiaOverlays = [self.neighbourhoodKMLParser overlays];
+        NSLog(@"%d", [self.californiaOverlays count]);
+        [self logTimeSinceLastLog:@"made overlays"];
+        [self.mapView removeOverlays:self.cityOverlays];
+        [self.mapView addOverlays:self.californiaOverlays];
+
+        
+        MKMapRect caBounds = MKMapRectNull;
+        for (id <MKOverlay> overlay in self.californiaOverlays) {
+            if (MKMapRectIsNull(caBounds)) {
+                caBounds = [overlay boundingMapRect];
+            } else {
+                caBounds = MKMapRectUnion(caBounds, [overlay boundingMapRect]);
+            }
+        }
+        [self logTimeSinceLastLog:@"bounds calculated"];
+        self.caBounds = caBounds;
+    }
+    else if(zoomLevel < 9.0 && self.isNeighbourhoodDetail) {
+        self.isNeighbourhoodDetail = NO;
+        [self.mapView removeOverlays:self.californiaOverlays];
+        [self.mapView addOverlays:self.cityOverlays];
+
+    }
+}
+
+
+
+- (double) getZoomLevel
+{
+    return 20.00 - log2(self.mapView.region.span.longitudeDelta * MERCATOR_RADIUS * M_PI / (180.0 * self.mapView.bounds.size.width));
 }
 
 

@@ -28,12 +28,15 @@
 		818F8F73175CB5F600503757 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F72175CB5F600503757 /* State.m */; };
 		818F8F7E175CB6C500503757 /* NeighbourhoodData.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F8F7D175CB6C500503757 /* NeighbourhoodData.m */; };
 		819A0780176594CF00035E50 /* USA-simple.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A077F176594CF00035E50 /* USA-simple.kml */; };
-		819A07821765986100035E50 /* USA-01simple.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A07811765986100035E50 /* USA-01simple.kml */; };
 		819A0784176874F200035E50 /* CA-Disolved-002.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A0783176874F200035E50 /* CA-Disolved-002.kml */; };
-		81F6F3B617630D1B00FFB9F0 /* USA-no-crime.kml in Resources */ = {isa = PBXBuildFile; fileRef = 81F6F3B517630D1B00FFB9F0 /* USA-no-crime.kml */; };
+		819A07891768848D00035E50 /* NY.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A07851768848D00035E50 /* NY.kml */; };
+		819A078A1768848D00035E50 /* CA.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A07861768848D00035E50 /* CA.kml */; };
+		819A078B1768848D00035E50 /* TX.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A07871768848D00035E50 /* TX.kml */; };
+		819A078C1768848D00035E50 /* CABuffered10.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A07881768848D00035E50 /* CABuffered10.kml */; };
+		819A078F1768861000035E50 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 819A078E1768860F00035E50 /* MKMapView+ZoomLevel.m */; };
+		819A079117688B0F00035E50 /* CASimple.kml in Resources */ = {isa = PBXBuildFile; fileRef = 819A079017688B0F00035E50 /* CASimple.kml */; };
 		81F6F3B717630F6B00FFB9F0 /* KMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F6F3B317630D0600FFB9F0 /* KMLParser.m */; };
 		81F6F3B91763100800FFB9F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F6F3B81763100800FFB9F0 /* CoreLocation.framework */; };
-		81F6F3BB176313CA00FFB9F0 /* rob4.kml in Resources */ = {isa = PBXBuildFile; fileRef = 81F6F3BA176313C900FFB9F0 /* rob4.kml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,13 +81,17 @@
 		818F8F7C175CB6C500503757 /* NeighbourhoodData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighbourhoodData.h; path = Model/NeighbourhoodData.h; sourceTree = "<group>"; };
 		818F8F7D175CB6C500503757 /* NeighbourhoodData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NeighbourhoodData.m; path = Model/NeighbourhoodData.m; sourceTree = "<group>"; };
 		819A077F176594CF00035E50 /* USA-simple.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "USA-simple.kml"; sourceTree = "<group>"; };
-		819A07811765986100035E50 /* USA-01simple.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "USA-01simple.kml"; sourceTree = "<group>"; };
 		819A0783176874F200035E50 /* CA-Disolved-002.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "CA-Disolved-002.kml"; sourceTree = "<group>"; };
+		819A07851768848D00035E50 /* NY.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NY.kml; sourceTree = "<group>"; };
+		819A07861768848D00035E50 /* CA.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CA.kml; sourceTree = "<group>"; };
+		819A07871768848D00035E50 /* TX.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TX.kml; sourceTree = "<group>"; };
+		819A07881768848D00035E50 /* CABuffered10.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CABuffered10.kml; sourceTree = "<group>"; };
+		819A078D1768860F00035E50 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		819A078E1768860F00035E50 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+		819A079017688B0F00035E50 /* CASimple.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CASimple.kml; sourceTree = "<group>"; };
 		81F6F3B217630D0600FFB9F0 /* KMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLParser.h; sourceTree = "<group>"; };
 		81F6F3B317630D0600FFB9F0 /* KMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLParser.m; sourceTree = "<group>"; };
-		81F6F3B517630D1B00FFB9F0 /* USA-no-crime.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "USA-no-crime.kml"; sourceTree = "<group>"; };
 		81F6F3B81763100800FFB9F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		81F6F3BA176313C900FFB9F0 /* rob4.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = rob4.kml; path = ../../../playground/KMLViewer/rob4.kml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,13 +161,17 @@
 				818F8F28175CAFF100503757 /* Supporting Files */,
 				818F8F5C175CB01E00503757 /* HomeViewController.h */,
 				818F8F5D175CB01E00503757 /* HomeViewController.m */,
+				819A078D1768860F00035E50 /* MKMapView+ZoomLevel.h */,
+				819A078E1768860F00035E50 /* MKMapView+ZoomLevel.m */,
 				81F6F3B217630D0600FFB9F0 /* KMLParser.h */,
 				81F6F3B317630D0600FFB9F0 /* KMLParser.m */,
+				819A07851768848D00035E50 /* NY.kml */,
+				819A07861768848D00035E50 /* CA.kml */,
+				819A079017688B0F00035E50 /* CASimple.kml */,
+				819A07871768848D00035E50 /* TX.kml */,
+				819A07881768848D00035E50 /* CABuffered10.kml */,
 				819A0783176874F200035E50 /* CA-Disolved-002.kml */,
-				819A07811765986100035E50 /* USA-01simple.kml */,
-				81F6F3BA176313C900FFB9F0 /* rob4.kml */,
 				819A077F176594CF00035E50 /* USA-simple.kml */,
-				81F6F3B517630D1B00FFB9F0 /* USA-no-crime.kml */,
 			);
 			path = "Safe Neighbourhoods";
 			sourceTree = "<group>";
@@ -288,11 +299,13 @@
 				818F8F34175CAFF100503757 /* Default.png in Resources */,
 				818F8F36175CAFF100503757 /* Default@2x.png in Resources */,
 				818F8F38175CAFF100503757 /* Default-568h@2x.png in Resources */,
-				81F6F3B617630D1B00FFB9F0 /* USA-no-crime.kml in Resources */,
-				81F6F3BB176313CA00FFB9F0 /* rob4.kml in Resources */,
 				819A0780176594CF00035E50 /* USA-simple.kml in Resources */,
-				819A07821765986100035E50 /* USA-01simple.kml in Resources */,
 				819A0784176874F200035E50 /* CA-Disolved-002.kml in Resources */,
+				819A07891768848D00035E50 /* NY.kml in Resources */,
+				819A078A1768848D00035E50 /* CA.kml in Resources */,
+				819A078B1768848D00035E50 /* TX.kml in Resources */,
+				819A078C1768848D00035E50 /* CABuffered10.kml in Resources */,
+				819A079117688B0F00035E50 /* CASimple.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +348,7 @@
 				818F8F73175CB5F600503757 /* State.m in Sources */,
 				818F8F7E175CB6C500503757 /* NeighbourhoodData.m in Sources */,
 				81F6F3B717630F6B00FFB9F0 /* KMLParser.m in Sources */,
+				819A078F1768861000035E50 /* MKMapView+ZoomLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
