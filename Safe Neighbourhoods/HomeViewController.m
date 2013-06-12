@@ -45,8 +45,8 @@
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"USA-no-crime" ofType:@"kml"];
-    // NSString *path = [[NSBundle mainBundle] pathForResource:@"rob4" ofType:@"kml"];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"USA-no-crime" ofType:@"kml"];
+     NSString *path = [[NSBundle mainBundle] pathForResource:@"CA-Disolved-002" ofType:@"kml"];
     NSURL *url = [NSURL fileURLWithPath:path];
     [self logTimeSinceLastLog:@"Start Parsing"];
     self.kmlParser = [[KMLParser alloc] initWithURL:url];
@@ -55,6 +55,7 @@
     [self logTimeSinceLastLog:@"End Parsing"];
     
     NSArray *overlays = [self.kmlParser overlays];
+    NSLog(@"%d", [overlays count]);
     [self logTimeSinceLastLog:@"made overlays"];
     
     [self.mapView addOverlays:overlays];
@@ -83,8 +84,8 @@
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
-    NSLog(@"%d", self.x);
-    self.x++;
+    //NSLog(@"%d", self.x);
+  //  self.x++;
     return [self.kmlParser viewForOverlay:overlay];
 }
 

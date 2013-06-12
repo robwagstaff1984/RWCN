@@ -77,6 +77,5 @@
 
 - (MKAnnotationView *)viewForAnnotation:(id <MKAnnotation>)point;
 - (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay;
--(void) addMyOverlaysToMap:(MKMapView *)map;
 
 @end

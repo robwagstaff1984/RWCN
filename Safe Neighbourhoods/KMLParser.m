@@ -300,6 +300,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
 - (void)_assignStyles
 {
     for (KMLPlacemark *placemark in _placemarks) {
+        @autoreleasepool {
         if (!placemark.style && placemark.styleUrl) {
             NSString *styleUrl = placemark.styleUrl;
             NSRange range = [styleUrl rangeOfString:@"#"];
@@ -308,6 +309,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
                 KMLStyle *style = [_styles objectForKey:styleID];
                 placemark.style = style;
             }
+        }
         }
     }
 }
@@ -337,25 +339,14 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
 {
     NSMutableArray *overlays = [[NSMutableArray alloc] init];
     for (KMLPlacemark *placemark in _placemarks) {
+        @autoreleasepool {
+            
         id <MKOverlay> overlay = [placemark overlay];
         if (overlay)
             [overlays addObject:overlay];
+        }
     }
     return overlays;
-}
-
--(void) addMyOverlaysToMap:(MKMapView *)map {
-    int x = 0;
-    NSLog(@"Rob");
-    for (KMLPlacemark *placemark in _placemarks) {
-//        id <MKOverlay> overlay = [placemark overlay];
-        NSLog(@"%d", x);
-//        if (x > 2000) {
-//            break;
-//        }
-        [map addOverlay:[placemark overlay]];
-        x++;
-    }
 }
 
 
@@ -388,8 +379,11 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     // Find the KMLPlacemark object that owns this overlay and get
     // the view from it.
     for (KMLPlacemark *placemark in _placemarks) {
+        @autoreleasepool {
+            
         if ([placemark overlay] == overlay)
             return [placemark overlayView];
+        }
     }
     return nil;
 }
@@ -774,6 +768,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     // Build a polygon using both the outer coordinates and the list (if applicable)
     // of interior polygons parsed.
     MKPolygon *poly = [MKPolygon polygonWithCoordinates:coords count:coordsLen interiorPolygons:innerPolys];
+    
     free(coords);
     return poly;
 }
@@ -953,7 +948,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
         id <MKOverlay> overlay = [self overlay];
         if (overlay) {
             overlayView = [geometry createOverlayView:overlay];
-            //[style applyToOverlayPathView:overlayView];
+            [style applyToOverlayPathView:overlayView];
         }
     }
     return overlayView;
