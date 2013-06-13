@@ -10,6 +10,7 @@
 #import "NeighbourhoodData.h"
 #import <MapKit/MapKit.h>
 #import "KMLParser.h"
+#import "BDMKPolygonToDataTransformer.h"
 
 #define kTopAreaHeight 44
 #define kBottomAreaHeight 44
@@ -45,27 +46,72 @@
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
     
-    //NSString *path = [[NSBundle mainBundle] pathForResource:@"USA-no-crime" ofType:@"kml"];
-     NSString *path = [[NSBundle mainBundle] pathForResource:@"CA-Disolved-002" ofType:@"kml"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"USA-no-crime" ofType:@"kml"];
+        [self logTimeSinceLastLog:@"Start creating polygons"];
+    // NSString *path = [[NSBundle mainBundle] pathForResource:@"CA-Disolved-002" ofType:@"kml"];
     NSURL *url = [NSURL fileURLWithPath:path];
-    [self logTimeSinceLastLog:@"Start Parsing"];
+
     self.kmlParser = [[KMLParser alloc] initWithURL:url];
     
     [self.kmlParser parseKML];
-    [self logTimeSinceLastLog:@"End Parsing"];
     
     NSArray *overlays = [self.kmlParser overlays];
-    NSLog(@"%d", [overlays count]);
-    [self logTimeSinceLastLog:@"made overlays"];
+    [self logTimeSinceLastLog:@"End creating polygons"];
+
+    [self storePolygons:overlays];
+
     
-    [self.mapView addOverlays:overlays];
-    
-   // [self.kmlParser addMyOverlaysToMap:self.mapView];
-    [self logTimeSinceLastLog:@"added overlays"];
+            [self logTimeSinceLastLog:@"Start LOADING polygons"];
+     NSArray *loadedOverlays = [self loadPolygons];
+            [self logTimeSinceLastLog:@"END LOADING polygons"];
+    int i = 4;
+//    NSLog(@"%d", [overlays count]);
+//    [self logTimeSinceLastLog:@"made overlays"];
+//    
+//    [self.mapView addOverlays:overlays];
+//    
+//   // [self.kmlParser addMyOverlaysToMap:self.mapView];
+//    [self logTimeSinceLastLog:@"added overlays"];
     
   //  NSLog(@"%@", [[[NeighbourhoodData sharedData] states] objectAtIndex:0]);
 }
 
+
+-(void) storePolygons:(NSArray*)overlays {
+    BDMKPolygonToDataTransformer *myTransformer=[[BDMKPolygonToDataTransformer alloc] init];
+    NSMutableArray* polygonData = [NSMutableArray new];
+    for (MKPolygon *currentPolygon in overlays) {
+        [polygonData addObject:[myTransformer transformedValue:currentPolygon]];
+    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:polygonData forKey:@"polygonData"];
+
+//    
+//    
+//    For (MKOv)
+//    
+//	NSData *theData=[myTransformer transformedValue:myPolgon];
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setObject:theData forKey:@"myPolgon"];
+//    
+//    [defaults synchronize];
+//    
+//    NSUserDefaults *defaults2 = [NSUserDefaults standardUserDefaults];
+//    NSData *storedPolgonData = [defaults2 objectForKey:@"myPolgon"];
+//    
+//    MKPolygon* storedMyPolygon = [myTransformer reverseTransformedValue:theData];
+}
+-(NSArray*) loadPolygons {
+    BDMKPolygonToDataTransformer *myTransformer=[[BDMKPolygonToDataTransformer alloc] init];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *storedPolgonData = [defaults objectForKey:@"polygonData"];
+    NSMutableArray *loadedPolygonData = [NSMutableArray new];
+    for (NSData *currentPolygonData in storedPolgonData) {
+        [loadedPolygonData addObject:[myTransformer reverseTransformedValue:currentPolygonData]];
+    }
+    return loadedPolygonData;
+}
 
 
 -(void) logTimeSinceLastLog:(NSString*) message {
