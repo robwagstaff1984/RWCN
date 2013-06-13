@@ -16,6 +16,7 @@
 #define kTopAreaHeight 44
 #define kBottomAreaHeight 44
 #define kNavBarHeight 20
+#define kNeighbourhoodDetailZoomLevel 9.0
 
 @interface HomeViewController () <MKMapViewDelegate>
 
@@ -28,6 +29,7 @@
 @property(nonatomic, strong) NSArray* californiaOverlays;
 @property(nonatomic) MKMapRect caBounds;
 @property (nonatomic) BOOL isNeighbourhoodDetail;
+@property (nonatomic) BOOL isCaliforniaOverlaysAdded;
 @property (nonatomic) int x;
 @end
 
@@ -121,8 +123,9 @@
     //[lblCurrentLevel setText:[NSString stringWithFormat:@"%.2f",zoomLevel]];
     
     NSLog(@"zoomlevel-->%f long-->%f lat-->%f",zoomLevel,mapView.region.span.longitudeDelta,mapView.region.span.latitudeDelta);
-    if(zoomLevel >= 9.0 && !self.isNeighbourhoodDetail) {
+    if(zoomLevel >= kNeighbourhoodDetailZoomLevel && !self.isNeighbourhoodDetail) { // going into neighborhood zoom
         self.isNeighbourhoodDetail = YES;
+        self.isCaliforniaOverlaysAdded = YES;
         NSString *path = [[NSBundle mainBundle] pathForResource:@"CASimple" ofType:@"kml"];
         NSURL *url = [NSURL fileURLWithPath:path];
         [self logTimeSinceLastLog:@"Start Parsing"];
@@ -148,9 +151,23 @@
         }
         [self logTimeSinceLastLog:@"bounds calculated"];
         self.caBounds = caBounds;
-    }
-    else if(zoomLevel < 9.0 && self.isNeighbourhoodDetail) {
+    } else if (zoomLevel >= kNeighbourhoodDetailZoomLevel && self.isNeighbourhoodDetail) { // staying in neighbour hood zoom
+        if (!MKMapRectIntersectsRect(self.caBounds, self.mapView.visibleMapRect)) { //if map intersects
+            if(self.isCaliforniaOverlaysAdded) {
+                [self.mapView removeOverlays:self.californiaOverlays];
+                self.isCaliforniaOverlaysAdded = NO;
+                NSLog(@"Removed Overlays!");
+            }
+        } else { /// if map does not intersect
+            if(!self.isCaliforniaOverlaysAdded) {
+                NSLog(@"Readded the overlays");
+                self.isCaliforniaOverlaysAdded = YES;
+                [self.mapView addOverlays:self.californiaOverlays];
+            }
+        }
+    } else if(zoomLevel < kNeighbourhoodDetailZoomLevel && self.isNeighbourhoodDetail) { //going out of neighborhood zoom
         self.isNeighbourhoodDetail = NO;
+        self.isCaliforniaOverlaysAdded = NO;
         [self.mapView removeOverlays:self.californiaOverlays];
         [self.mapView addOverlays:self.cityOverlays];
 
