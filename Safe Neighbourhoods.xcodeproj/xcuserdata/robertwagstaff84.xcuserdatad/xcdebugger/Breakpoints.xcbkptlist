@@ -21,38 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Safe Neighbourhoods/HomeViewController.m"
-         timestampString = "392818792.251223"
+         timestampString = "392949911.476789"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Safe Neighbourhoods/HomeViewController.m"
-         timestampString = "392820438.588646"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "157"
+         endingLineNumber = "157"
          landmarkName = "-mapView:viewForOverlay:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Safe Neighbourhoods/HomeViewController.m"
-         timestampString = "392820096.485691"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -73,12 +47,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Safe Neighbourhoods/HomeViewController.m"
-         timestampString = "392820096.485691"
+         timestampString = "392949911.476789"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
-         landmarkName = "-viewDidLoad"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
+         landmarkName = "-storePolygons:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -86,26 +60,87 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Safe Neighbourhoods/HomeViewController.m"
-         timestampString = "392820438.588646"
+         timestampString = "392949911.476789"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-storePolygons:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Safe Neighbourhoods/HomeViewController.m"
-         timestampString = "392820435.392459"
+         timestampString = "392948971.06508"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
-         landmarkName = "-viewDidLoad"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
+         landmarkName = "-preProcessData"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Safe Neighbourhoods/HomeViewController.m"
+         timestampString = "392949911.476789"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "-loadPolygonViews"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Safe Neighbourhoods/KMLParser.m"
+         timestampString = "392948982.677462"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "385"
+         endingLineNumber = "385"
+         landmarkName = "-viewForOverlayOriginal:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Safe Neighbourhoods/HomeViewController.m"
+         timestampString = "392949911.476789"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
+         landmarkName = "-setupMap"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Safe Neighbourhoods/KMLParser.m"
+         timestampString = "392950238.521675"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "386"
+         endingLineNumber = "386"
+         landmarkName = "-viewForOverlayOriginal:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
+   <ExceptionBreakpoints>
+      <ExceptionBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         scope = "0"
+         stopOnStyle = "0">
+      </ExceptionBreakpoint>
+   </ExceptionBreakpoints>
 </Bucket>

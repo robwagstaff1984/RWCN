@@ -59,11 +59,11 @@
 
 - (id)transformedValue:(id)value {
 	
-    if (![value isKindOfClass:[MKPolygon class]]) {
-        // Throw an exception if the wrong class is used.
-        // The class must be MKPolygon.
-        [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer transformedValue: value passed is not an MKPolygon instance!"];
-    }
+//    if (![value isKindOfClass:[MKPolygon class]]) {
+//        // Throw an exception if the wrong class is used.
+//        // The class must be MKPolygon.
+//        [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer transformedValue: value passed is not an MKPolygon instance!"];
+//    }
     
     MKPolygon *thePolygon=(MKPolygon *)value;
 	
@@ -71,9 +71,9 @@
 	NSData * polygonData = [NSPropertyListSerialization dataFromPropertyList:[self dictionaryForPolygon:thePolygon]
 	
                                                                       format:NSPropertyListBinaryFormat_v1_0 errorDescription:&errorString];
-	if ([errorString length]) {
-        NSLog(@"errorString: %@",errorString);
-    }
+//	if ([errorString length]) {
+//        NSLog(@"errorString: %@",errorString);
+//    }
 	return [polygonData gzipDeflate];
 	
 }
@@ -103,7 +103,9 @@
 		[strongBlockArray addObject:[strongBlockSelf dictionaryForPolygon:polygon]];
 	}];
 	
-	return [NSDictionary dictionaryWithObjectsAndKeys:dataPoints,@"polygonPoints",interiorPolygons,@"interiorPolygons",nil];
+    NSString* title = thePolygon.title;
+    
+	return [NSDictionary dictionaryWithObjectsAndKeys:dataPoints,@"polygonPoints",interiorPolygons,@"interiorPolygons",title,@"title", nil];
 	
 	
 }
@@ -183,6 +185,7 @@
     // Package everything up and return.
 	
 	MKPolygon *thePolygon=[MKPolygon polygonWithPoints:mapPoints count:pointCount interiorPolygons:interiorPolygons];
+    thePolygon.title = [polygonDictionary objectForKey:@"title"];
 	return thePolygon;
 	
 }

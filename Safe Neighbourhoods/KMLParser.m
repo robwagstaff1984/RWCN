@@ -374,7 +374,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return nil;
 }
 
-- (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay
+- (MKOverlayView *)viewForOverlayOriginal:(id <MKOverlay>)overlay
 {
     // Find the KMLPlacemark object that owns this overlay and get
     // the view from it.
@@ -384,6 +384,20 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
         if ([placemark overlay] == overlay)
             return [placemark overlayView];
         }
+    }
+    return nil;
+}
+//
+- (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay
+{
+    // Find the KMLPlacemark object that owns this overlay and get
+    // the view from it.
+    for (KMLPlacemark *placemark in _placemarks) {
+            if  ((((MKPolygon*)overlay).points->x == ((MKPolygon*)[placemark overlay]).points->x)
+                 && (((MKPolygon*)overlay).points->y == ((MKPolygon*)[placemark overlay]).points->y)) {
+                
+                 return [placemark overlayView];
+            }
     }
     return nil;
 }
